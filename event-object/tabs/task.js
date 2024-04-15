@@ -4,9 +4,10 @@ let info = [...document.querySelectorAll(".tab__content")];
 
 clickPage.addEventListener("click", function (e) {
 	
-	for (let i = 0; i < info.length; i++) {
+	/*for (let i = 0; i < info.length; i++) {
 		info[i].classList.remove("tab__content_active");
-	}
+	}*/
+	info.forEach((item) => item.classList.remove("tab__content_active"));
 
 	let clickElem = e.target;
 	clickElem.classList.toggle("tab_active");
