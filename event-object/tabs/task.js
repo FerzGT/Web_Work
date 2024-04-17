@@ -1,20 +1,15 @@
-let clickPage = document.querySelector(".tab__navigation");
+//let clickPage = document.querySelector(".tab__navigation");
 let tabs = [...document.querySelectorAll(".tab")];
 let info = [...document.querySelectorAll(".tab__content")];
 
-clickPage.addEventListener("click", function (e) {
-	
-	/*for (let i = 0; i < info.length; i++) {
-		info[i].classList.remove("tab__content_active");
-	}*/
-	info.forEach((item) => item.classList.remove("tab__content_active"));
+const removeTabs = tabs.forEach((item) => item.classList.remove("tab_active"));
 
-	let clickElem = e.target;
-	clickElem.classList.toggle("tab_active");
+tabs.forEach((tabs, index1) => {
 	
+	tabs.addEventListener('click', (e) => {
 	
-	let i = tabs.indexOf(clickElem, 0);
-	console.log(info);
-	info[i].classList.toggle("tab__content_active");
-
-});
+		removeTabs;
+		info.forEach((item) => item.classList.remove("tab__content_active"));
+		e.target.classList.toggle("tab_active");
+		info[index1].classList.toggle("tab__content_active");
+	})});
